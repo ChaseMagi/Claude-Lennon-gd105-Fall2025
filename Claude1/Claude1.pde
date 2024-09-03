@@ -1,1 +1,1 @@
-
+print("Hello Blue World");
