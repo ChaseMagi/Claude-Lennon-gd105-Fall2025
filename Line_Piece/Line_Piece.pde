@@ -28,4 +28,7 @@ void draw(){
   line(v1.x,v1.y+150,v2.x,v2.y+150);
   stroke(#0600f0);
   line(v3.x,v3.y+150,v4.x,v4.y+150);
+  if (frameCount == 1){
+    save("Line_Piece.png");
+  }
 }
