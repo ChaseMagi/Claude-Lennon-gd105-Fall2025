@@ -20,6 +20,8 @@ void setup() {
 
 void draw() {
   background(204);
+  fill(#FF0000);
+  circle(width/2,height/2-d,200);
   translate(b,b);
   translate(a*2, 0);
   shape(piece);
