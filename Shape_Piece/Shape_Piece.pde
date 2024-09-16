@@ -34,7 +34,7 @@ void draw() {
   translate((-a*2)+10,d);
   shape(piece);
   
-  if (frameCount == 1){
+  if (frameCount == 2){
     save("Shape_Piece.png");
   }
 }
