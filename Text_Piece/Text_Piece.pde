@@ -15,7 +15,7 @@ void draw(){
   rotate(radians(-10));
   textSize(64);
   fill(233, 28, 28, 416);
-  text("A", 260, 240);
+  text("A", 260, 263);
   
   
   textSize(64);
@@ -36,4 +36,8 @@ void draw(){
   textSize(162);
   fill(168, 7, 235, 443);
   text("!", 286, 477);
+  
+  if (frameCount == 1){
+    save("Text_Piece.png");
+  }
 }
