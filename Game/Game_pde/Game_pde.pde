@@ -17,7 +17,10 @@ void setup() {
 void draw() {
   if (stopLoop) {  // If the loop has stopped, display the message
     background(0);  // Set background to black
-    
+    if (frameCount == 10) {
+      saveFrame("Game.png");
+    }
+
     // Display the "You lose" message centered on the screen
     textAlign(CENTER, CENTER);  // Center the text
     textSize(64);  // Set text size to 64 (bold, large)
@@ -28,6 +31,7 @@ void draw() {
     return;  // Exit the draw function to stop further drawing
   }
 
+  // Code that runs only if stopLoop is false
   // Check if the size of the particle exceeds 1.5 times the width of the canvas
   for (int i = 0; i < p.length; i++) {
     if (p[i].size > 1.5 * width) {  // Check if the particle size exceeds the threshold
@@ -40,7 +44,7 @@ void draw() {
       p[i].update();
     }
   }
-  
+
   // Update and display all effects in the effects list
   for (int i = effects.size() - 1; i >= 0; i--) {
     Effect er = effects.get(i);
@@ -52,7 +56,7 @@ void draw() {
       float distance = dist(er.position.x, er.position.y, p[j].position.x , p[j].position.y);
 
       // Check if the effect is within 5/6 of the particle's size (threshold for removal)
-      float threshold = p[j].size/2;
+      float threshold = p[j].size / 2;
       if (distance <= threshold) {
         effects.remove(i);  // Remove effect if it collides with the particle
         break;  // No need to check further once the effect is removed
@@ -65,9 +69,12 @@ void draw() {
     for (int i = 0; i < 10; i++) {
       effects.add(new Effect());  // Create a new effect and add it to the list
     }
+  }  
+  if (frameCount == 10) {
+    saveFrame("Game.png");
   }
+  
 }
-
 
 // Mouse press event to subtract size (radius) from the particle
 void mousePressed() {
