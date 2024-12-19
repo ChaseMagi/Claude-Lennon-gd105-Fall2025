@@ -10,3 +10,16 @@ The idea was to have a gradually growing rainbow ball on the mouse
 that explodes into a bunch of tiny balls and shrinks when clicked,
 and if the ball got too big the game would go black signifying the end of the game.
 */
+
+ParticleSystem ps;
+
+void setup() {
+  size(640, 360);
+  ps = new ParticleSystem(new PVector(width/2, 50));
+}
+
+void draw() {
+  background(0);
+  ps.addParticle();
+  ps.run();
+}
